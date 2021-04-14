@@ -1,4 +1,6 @@
 const inquirer = require('inquirer');
+const generateMarkdown = require('./utils/generateMarkdown.js');
+
 
 const promptUser = () => {
     return inquirer.prompt([
@@ -31,7 +33,7 @@ const promptUser = () => {
         type: 'checkbox',
         name: 'license',
         message: 'What license does this project have? (Check one)',
-        choices: ['MIT', 'ISC', 'Apache License 2.0', 'GNU']
+        choices: ['MIT', 'ISC', 'Apache', 'GNU']
       },
       {
         type: 'input',
@@ -45,11 +47,11 @@ const promptUser = () => {
       },
       {
         type: 'input',
-        name: 'link',
+        name: 'email',
         message: 'Please enter your email address:'
       }
     ]);
   };
   
-  promptUser().then(answers => console.log(answers));
+  promptUser().then(answers => generateMarkdown(answers));
   
