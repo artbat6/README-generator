@@ -4,7 +4,7 @@ const promptUser = () => {
     return inquirer.prompt([
       {
         type: 'input',
-        name: 'name',
+        name: 'title',
         message: 'What is the title of your project?'
       },
       {
@@ -28,14 +28,25 @@ const promptUser = () => {
         message: 'Provide name of author or other creators:'
       },
       {
-        type: 'input',
+        type: 'checkbox',
         name: 'license',
-        message: 'What type of license does this project have?'
+        message: 'What license does this project have? (Check one)',
+        choices: ['MIT', 'ISC', 'Apache License 2.0', 'GNU']
       },
       {
         type: 'input',
         name: 'link',
-        message: 'Provide link to deployed project:'
+        message: 'Please provide a link to the deployed project:'
+      },
+      {
+        type: 'input',
+        name: 'github',
+        message: 'Please enter your GitHub user name:'
+      },
+      {
+        type: 'input',
+        name: 'link',
+        message: 'Please enter your email address:'
       }
     ]);
   };
