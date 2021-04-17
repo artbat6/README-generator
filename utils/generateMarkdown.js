@@ -9,10 +9,11 @@ function renderLicenseBadge(license) {
     return "[![License: ISC](https://img.shields.io/badge/License-ISC-blue.svg)](https://opensource.org/licenses/ISC)"
   case "GNU":
     return "[![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)"
-  default: 
+  case "Apache":
     return "[![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)"
-}
-}
+  default: ""
+};
+};
 
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
@@ -28,6 +29,22 @@ function generateMarkdown(answers) {
   const badge = renderLicenseBadge(answers.license[0]);
 
   return `# ${answers.title}
+    ## Description
+    ### ${answers.description}
+    ## Installation
+    ### ${answers.installation}
+    ## Usage
+    ### ${answers.usage}
+    ## Credits
+    ### ${answers.credits}
+    ## License
+    ### ${answers.license}
+    ## Link
+    ### ${answers.link}
+    ## 
+    ### ${answers.github}
+    ## 
+    ### ${answers.email}
   `;
 }
 
