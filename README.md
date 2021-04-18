@@ -1,4 +1,4 @@
-# hell
+# MyREADME Generator
 ## Table of Contents:
   1. [Description](#description) 
   2. [Installation](#Installation)
@@ -9,18 +9,18 @@
   7. [GitHub](#GitHub)
   8. [E-mail](#E-mail)
 ## Description
-hell 
+This project is a CLI application that generates a professional README.md file from the command line. 
 ## Installation
-suffering
+To install the user needs to install Node and Inquirer in the root folder of the application.  From the root folder enter *node index.js* then begin answering questions as they appear on the command line.
 ## Usage
-death
+The application can be used by web developers to quickly create markdown files for their projects.
 ## Contributing
-leaches
+The application is not available for others to contribute.
 ## Tests
-suicide
+n/a
 ## License
- 
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ## GitHub
-dogdickLarry@hotmail.com
+https://github.com/artbat6
 ## E-mail
-dd
+arthurbatesdev@gmail.com
