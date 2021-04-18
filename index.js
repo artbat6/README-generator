@@ -1,77 +1,68 @@
-// TODO: Include packages needed for this application
-const inquirer = require('inquirer');
-const generateMarkdown = require('./utils/generateMarkdown.js');
+function init () {
 
-// TODO: Create an array of questions for user input
-const promptUser = () => {
-    return inquirer.prompt([
+  const inquirer = require('inquirer');
+  const fs = require('fs'); 
+  const generate = require('./utils/generateMarkdown.js');
+  const path = require('path');
+  
+  inquirer
+    .prompt([
+      { 
+        type: "input",
+        message: "What is a good Title for your project?",
+        name: "title",  
+           },
+      { 
+        type: "input",
+        message: "What is a good Description of your project?",
+        name: "description",  
+           },
       {
-        type: 'input',
-        name: 'title',
-        message: 'What is the title of your project?'
+         type: "input",
+         message: "How do you Install your application?",
+         name: "installation",
       },
       {
-        type: 'input',
-        name: 'description',
-        message: 'Enter a description of your project:'
+        type: "input",
+        message: "How do you Install your application?",
+        name: "installation",
+     },
+      {
+          type: "input",
+          message: "How do you Use your application?",
+          name: "usage",
       },
       {
-        type: 'input',
-        name: 'installation',
-        message: 'Provide installation instructions for your project:'
+          type: "checkbox",
+          message: "What License did you use for this repository?",
+          choices: ["MIT", "GNU General Public License 2.0", "Apache License 2.0", "GNU General Public License 3.0"],
+          name: "license",
       },
       {
-        type: 'input',
-        name: 'usage',
-        message: 'Provide some information about how to use your project:'
+          type: "input",
+          message: "How can people Contribute to your project?",
+          name: "contributing",
+      },
+     {
+          type: "input",
+          message: "How do people update the tests for your project?",
+          name: "tests"
       },
       {
-        type: 'input',
-        name: 'credits',
-        message: 'Provide name of author or other creators:'
+          type: "input",
+          message: "What is your GitHub username?",
+          name: "github"
       },
       {
-        type: 'checkbox',
-        name: 'license',
-        message: 'What license does this project have? (Check one)',
-        choices: ['MIT', 'ISC', 'Apache', 'GNU']
+          type: "input",
+          message: "What is your email address where users and contributors can send questions?",
+          name: "email"
       },
-      {
-        type: 'input',
-        name: 'link',
-        message: 'Please provide a link to the deployed project:'
-      },
-      {
-        type: 'input',
-        name: 'github',
-        message: 'Please enter your GitHub user name:'
-      },
-      {
-        type: 'input',
-        name: 'email',
-        message: 'Please enter your email address:'
-      }
-    
     ])
+    .then((response) => {
+      return fs.writeFileSync(path.join (process.cwd(), "MyREADME.md"), generate(response));
+    });
   }
   
-  promptUser().then(answers => generateMarkdown(answers));
-
-
-  // TODO: Create a function to write README file
-// function writeToFile(fileName, data) {
-//     return fs.writeFileSync(path.join(process.cwd(),filename),data)
-// };
-
-// // TODO: Create a function to initialize app
-// function init() {
-
-//     inquirer
-//     .prompt(questions)
-//     .then(responses => {
-//         writeToFile('newReadMe.md', generateMarkdown(answers));
-//     });
-// };
-
-// // Function call to initialize app
-// init();
+  init();
+  

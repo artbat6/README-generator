@@ -1,4 +1,4 @@
-# hell
+# dd
 ## Table of Contents:
   1. [Description](#description) 
   2. [Installation](#Installation)
@@ -9,18 +9,18 @@
   7. [GitHub](#GitHub)
   8. [E-mail](#E-mail)
 ## Description
-hell 
+dd 
 ## Installation
-suffering
+dd
 ## Usage
-death
+dd
 ## Contributing
-leaches
+dd
 ## Tests
-suicide
+dd
 ## License
- 
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)
 ## GitHub
-dogdickLarry@hotmail.com
+dd
 ## E-mail
 dd
